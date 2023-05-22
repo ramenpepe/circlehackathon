@@ -1,6 +1,6 @@
 .left-nav-bar {
   width: 300px; height:100vh;
-  background-color: #ccc;
+  background:linear-gradient(#CCC, #666);
   padding: 20px;
   box-sizing: border-box;
   border-right: 1px solid var(--secondary-color);
