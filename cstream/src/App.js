@@ -24,8 +24,19 @@ function App() {
   
   const [contacts, setContacts] = useState(initialContacts);
 
+
+  
+
   const handleFinish = (msobj) => {
     console.log(milestones, msobj);
+
+    const isDuplicate = milestones.some((milestone) => milestone.content.milestoneName === msobj.milestoneName);
+
+    if (isDuplicate) {
+      console.log(`Milestone with name '${msobj.milestoneName}' already exists. Skipping addition.`);
+      return;
+    }
+
     setMilestones((prevMilestones) => [
       ...prevMilestones,
      
@@ -147,6 +158,7 @@ function App() {
         name: milestone.content.milestoneName,
         contractAddress: deployedContract,
         blockchain: chain,
+        releaseAmount: milestone.content.releaseAmount,
         status: 'Pending',
         completionLevel: 0,
       };
@@ -176,7 +188,7 @@ function App() {
   const [counterparty, setCounterparty] = useState('');
 
   return (
-    <div className="App">
+    <div className="App ">
       <LeftNavBar activeItem={activeItem} handleNavItemClick={handleNavItemClick} />
 
       {activeItem === 'Milestones' && (
@@ -220,7 +232,7 @@ function App() {
               counterparty={counterparty}
             />
           </div>
-          <button className="button" style={{ background: "black" }} onClick={handleContractDeployment}>
+          <button className="button" style={{ background: "black" ,width: "100%"}} onClick={handleContractDeployment}>
   Deploy Milestone Contracts
 </button>
         </div>

@@ -11,6 +11,7 @@ const ContractList = ({ contracts }) => {
           <tr>
             <th>Milestone</th>
             <th>Contract Address</th>
+            <th>Amount</th>
             <th>Blockchain</th>
             <th>Status</th>
             <th>Milestone Completion</th>
@@ -21,6 +22,7 @@ const ContractList = ({ contracts }) => {
             <tr key={contract.contractAddress}>
               <td>{contract.name}</td>
               <td>{contract.contractAddress}</td>
+              <td>{parseFloat(contract.releaseAmount.toFixed(2))}</td>
               <td>{contract.blockchain}</td> {/* Add this line */}
               <td>{contract.status}</td>
               <td>

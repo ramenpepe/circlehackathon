@@ -68,35 +68,36 @@ const WizardComponent = ({
               Milestone Name:
               <input
                 type="text"
-                value={milestoneName}
+                value={milestoneName} placeholder={'500 manhours'}
                 onChange={(e) => setMilestoneName(e.target.value)}
               />
             </label>
 
-            {/* Additional fields based on your requirements */}
-            {/* For example, event data object */}
-            <label>
-              Event Data Object:
-              <textarea
-                value={eventData}
-                onChange={(e) => setEventData(e.target.value)}
-              />
-            </label>
+           
 
             {/* Verification endpoint */}
             <label>
               Verification Endpoint:
               <input
-                type="text"
+                type="text" placeholder={'https://reno-demo.adappter.xyz/api/manhours'}
                 value={verificationEndpoint}
                 onChange={(e) => setVerificationEndpoint(e.target.value)}
+              />
+            </label>
+             {/* Additional fields based on your requirements */}
+            {/* For example, event data object */}
+            <label>
+              Event Data Object:
+              <textarea placeholder={'{project-name:"duxton"}'}
+                value={eventData}
+                onChange={(e) => setEventData(e.target.value)}
               />
             </label>
             <label>
               Verification Response:
               <textarea
                 type="text"
-                value={verificationResponse}
+                value={verificationResponse} placeholder={'status.data.hours > 500 '} asd
                 onChange={(e) => setVerificationResponse(e.target.value)}
               ></textarea>
             </label>

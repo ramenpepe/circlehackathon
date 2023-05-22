@@ -27,13 +27,15 @@ button{ margin:3px; }
   border: 1px solid #ccc;
   box-shadow: 0 2px 3px #666;
   cursor: pointer;
+  background:#FFF;
   transform: perspective(500px) rotateX(20deg);
   border-radius: 4px;
   transition: transform 0.5s;
 }
 .project:hover {
-transform: perspective(500px) rotateX(0deg); background:#FFF;
+transform: perspective(500px) rotateX(0deg); background:#999;
 box-shadow: 0 0px 3px #666;
+color:#FFF;
   border-radius: 4px;
   transition: transform 0.5s;
 }
