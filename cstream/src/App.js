@@ -232,6 +232,9 @@ function App() {
 
       {activeItem === 'Milestones' && (
         <div class="milestonecon">
+            <button className="button" style={{ background: "black" ,width: "100%",padding:"12px"}} onClick={handleContractDeployment}>
+  Deploy Milestone Contracts
+</button>
           <div className="wizard">
           <h3>{selectedProject && selectedProject.name ? selectedProject.name : <div class="Block">-Select a Project-</div>}</h3>
 
@@ -271,9 +274,7 @@ function App() {
               counterparty={counterparty}
             />
           </div>
-          <button className="button" style={{ background: "black" ,width: "100%"}} onClick={handleContractDeployment}>
-  Deploy Milestone Contracts
-</button>
+        
         </div>
       )}
       {activeItem === 'Projects' && <div>
