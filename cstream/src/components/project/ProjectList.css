@@ -1,0 +1,37 @@
+.project-list-container {
+  margin-bottom: 20px;
+}
+
+.project-form input,
+.project-form textarea {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.project-info {
+  flex-grow: 1;
+}
+
+.project button {
+  margin-left: 10px;
+}

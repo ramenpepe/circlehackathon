@@ -1,0 +1,53 @@
+.address-book {
+
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-form input, select {
+  flex: 1;
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  padding: 8px 12px;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-list {
+  margin-top: 20px;
+}
+
+.contact {
+  margin: 5px;
+  padding: 10px;
+  display:inline-block;
+  max-width:350px; 
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.contact-name {
+  font-weight: bold;
+}
+
+.contact-address {
+  margin-top: 5px;
+}

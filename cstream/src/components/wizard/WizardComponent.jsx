@@ -1,14 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './WizardComponent.css';
 
-const WizardComponent = ({ onFinish }) => {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [milestoneName, setMilestoneName] = useState('');
-  const [eventData, setEventData] = useState({});
-  const [verificationEndpoint, setVerificationEndpoint] = useState('');
-  const [releaseAmount, setReleaseAmount] = useState(0);
-  const [counterparty, setCounterparty] = useState('');
-
+const WizardComponent = ({
+  currentStep,
+  setCurrentStep,
+  milestoneName,
+  setMilestoneName,
+  eventData,
+  setEventData,
+  verificationEndpoint,
+  setVerificationEndpoint,
+  verificationResponse,
+  setVerificationResponse,
+  releaseAmount,
+  setReleaseAmount,
+  counterparty,
+  setCounterparty,
+  contacts,
+  onFinish,
+}) => {
   const handleNext = () => {
     if (currentStep === 1) {
       setCurrentStep(currentStep + 1);
@@ -16,9 +26,19 @@ const WizardComponent = ({ onFinish }) => {
       // Validate the inputs before proceeding to the next step
       if (releaseAmount && counterparty) {
         if (onFinish) {
-          console.log("wizard finish");
-          onFinish(); // Call the onFinish function from the props
-        }else{
+          var ret = {milestoneName: milestoneName, eventData: eventData, verificationEndpoint: verificationEndpoint,
+            verificationResponse:verificationResponse,
+            releaseAmount:releaseAmount,
+            counterparty:counterparty}
+          onFinish(ret); // Call the onFinish function from the props
+          setCurrentStep(1);
+          setMilestoneName('');
+          setEventData('');
+          setVerificationEndpoint('');
+          setVerificationResponse('');
+          setReleaseAmount(0);
+          setCounterparty('');
+        } else {
           console.log(onFinish);
         }
       } else {
@@ -58,8 +78,8 @@ const WizardComponent = ({ onFinish }) => {
             <label>
               Event Data Object:
               <textarea
-                value={JSON.stringify(eventData)}
-                onChange={(e) => setEventData(JSON.parse(e.target.value))}
+                value={eventData}
+                onChange={(e) => setEventData(e.target.value)}
               />
             </label>
 
@@ -71,6 +91,14 @@ const WizardComponent = ({ onFinish }) => {
                 value={verificationEndpoint}
                 onChange={(e) => setVerificationEndpoint(e.target.value)}
               />
+            </label>
+            <label>
+              Verification Response:
+              <textarea
+                type="text"
+                value={verificationResponse}
+                onChange={(e) => setVerificationResponse(e.target.value)}
+              ></textarea>
             </label>
           </div>
         )}
@@ -91,12 +119,18 @@ const WizardComponent = ({ onFinish }) => {
 
             {/* Counterparty */}
             <label>
-              Counterparty:
-              <input
-                type="text"
+              Counterparty:<br></br>
+              <select
                 value={counterparty}
                 onChange={(e) => setCounterparty(e.target.value)}
-              />
+              >
+                <option value="">Select Counterparty</option>
+                {contacts.map((contact) => (
+                  <option key={contact.id} value={contact.name}>
+                    {contact.name}
+                  </option>
+                ))}
+              </select>
             </label>
           </div>
         )}

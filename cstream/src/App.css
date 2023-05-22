@@ -19,10 +19,10 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.App{ max-width:800px; margin:10vh auto;  }
+.milestonecon .milestones{ display:inline-block; width:200px; }
 
-.App > .milestones{ display:inline-block; width:200px; }
-
-.App > .wizard{ margin:10px; display:inline-block;  width:calc(100vw - 250px);  vertical-align:top; }
+.milestonecon .wizard{ margin:10px; display:inline-block;  width:calc(100% - 250px);  vertical-align:top; }
 
 .App-header {
   background-color: #282c34;

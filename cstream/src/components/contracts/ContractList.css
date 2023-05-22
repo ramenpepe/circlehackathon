@@ -1,0 +1,31 @@
+.contract-list-container {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+thead th {
+  background-color: #f2f2f2;
+}
+
+.contract-list-container .completion-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.contract-list-container .completion-level {
+  height: 100%;
+  background-color: #6db65b;
+  border-radius: 5px;
+}
