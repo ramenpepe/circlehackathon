@@ -7,7 +7,7 @@ const AddressBook = ({contacts, setContacts}) => {
   const [chain, setChain] = useState('');
   const [address, setAddress] = useState('');
   const [editingContact, setEditingContact] = useState(null);
-  const supportedChains = ['Ethereum', 'Algorand', 'Solana', 'Stellar', 'Avalanche', 'Hedera', 'USDC'];
+  const supportedChains = ['Ethereum', 'Algorand', 'Solana', 'Stellar', 'Avalanche', 'Hedera'];
 
   const handleAddContact = () => {
     if (name && chain && address) {

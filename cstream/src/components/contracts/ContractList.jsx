@@ -11,9 +11,9 @@ const ContractList = ({ contracts }) => {
           <tr>
             <th>Milestone</th>
             <th>Contract Address</th>
-            <th>Amount</th>
+            <th>Amount (USDC)</th>
             <th>Blockchain</th>
-            <th>Status</th>
+            <th>Contract Status</th>
             <th>Milestone Completion</th>
           </tr>
         </thead>

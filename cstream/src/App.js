@@ -24,7 +24,7 @@ function App() {
   
   const [contacts, setContacts] = useState(initialContacts);
 
-
+  const [isLoading, setIsLoading] = useState(false);
   
 
   const handleFinish = (msobj) => {
@@ -132,11 +132,13 @@ function App() {
   
     return milestoneData;
   };
-  
+
 
   const handleContractDeployment = () => {
     const updatedContracts = [...contracts]; // Create a copy of the contracts array
-  
+    
+   
+   
     milestones.forEach((milestone) => {
       // Check if the milestone has already been deployed
       const existingContract = updatedContracts.find((contract) => contract.name === milestone.content.milestoneName);
@@ -144,8 +146,12 @@ function App() {
       if (existingContract) {
         console.log("exists",milestone.content.milestoneName); 
         console.log(`Milestone '${milestone.name}' has already been deployed. Skipping deployment.`);
+       
         return;
       }
+      setIsLoading(true);
+      setTimeout(() => {
+        setIsLoading(false);  }, 15000); 
   
       // Deploy the milestone as a contract using the necessary data
       const deployedContract = deployMilestoneContract(milestone);
@@ -168,6 +174,8 @@ function App() {
   
       // Log the deployed contract details
       console.log('Deployed Contract:', newContract);
+    
+   
     });
   
     // Update the contracts state with the updatedContracts array
@@ -189,6 +197,18 @@ function App() {
 
   return (
     <div className="App ">
+       {isLoading && 
+       <div class="loading-container">
+       <div class="loading-circle"></div>
+       <div class="loading-circle"></div>
+       <div class="loading-circle"></div>
+       <div class="loading-circle"></div>
+       <div class="loading-text">
+       <h3>Deploying Contracts</h3>
+       </div>
+     </div>
+    
+       }
       <LeftNavBar activeItem={activeItem} handleNavItemClick={handleNavItemClick} />
 
       {activeItem === 'Milestones' && (

@@ -63,7 +63,7 @@ const WizardComponent = ({
       <div className="wizard-content">
         {currentStep === 1 && (
           <div>
-            <h2>Milestone Information</h2>
+  
             <label>
               Milestone Name:
               <input
@@ -106,11 +106,11 @@ const WizardComponent = ({
 
         {currentStep === 2 && (
           <div>
-            <h2>Release Details</h2>
+            
 
             {/* Amount of money to be released */}
             <label>
-              Amount to Release:
+              Amount to Request (USDC):
               <input
                 type="number"
                 value={releaseAmount}
