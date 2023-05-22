@@ -28,7 +28,7 @@ function App() {
     console.log(milestones, msobj);
     setMilestones((prevMilestones) => [
       ...prevMilestones,
-      { type: 'arrow', direction: 'down' },
+     
       { type: 'box', content: msobj, id: 'newMilestone' },
     ]);
     setCurrentStep(1);
@@ -69,13 +69,84 @@ function App() {
     // setMilestones([...milestones, { type: 'arrow', direction: 'down' }, { type: 'box', content: 'New Milestone', id: 'newMilestone' }]);
   };
 
+  const deployMilestoneContract = (milestone) => {
+    // Generate a random EVM-based contract address
+    const contractAddress = generateRandomContractAddress();
+  
+    // Update the milestone object with the contract address
+
+  return  contractAddress;
+    // Implement the logic to track the status of contract signing and milestone completion level
+  };
+  
+  const generateRandomContractAddress = () => {
+    // Generate a random hexadecimal string as the contract address
+    const hexCharacters = '0123456789ABCDEF';
+    let contractAddress = '0x';
+  
+    for (let i = 0; i < 40; i++) {
+      const randomIndex = Math.floor(Math.random() * hexCharacters.length);
+      contractAddress += hexCharacters[randomIndex];
+    }
+  
+    return contractAddress;
+  };
+  
+  const retrieveMilestoneData = (milestone) => {
+    // Implement the logic to retrieve the milestone data based on the milestone object
+    // You can access the properties of the milestone object and return the necessary data
+    const milestoneData = {
+      name: milestone.name,
+      eventData: milestone.eventData,
+      verificationEndpoint: milestone.verificationEndpoint,
+      verificationResponse: milestone.verificationResponse,
+      releaseAmount: milestone.releaseAmount,
+      counterparty: milestone.counterparty,
+      // Add other properties as needed
+    };
+  
+    return milestoneData;
+  };
+  
 
   const handleContractDeployment = () => {
+    console.log(contracts);
+    const updatedContracts = [...contracts]; // Create a copy of the contracts array
+  
     milestones.forEach((milestone) => {
+      // Check if the milestone has already been deployed
+      const existingContractIndex = updatedContracts.findIndex((contract) => contract.name === milestone.name);
+  
+      if (existingContractIndex !== -1) {
+        console.log(`Milestone '${milestone.name}' has already been deployed. Skipping deployment.`);
+        return;
+      }
+  
       // Deploy the milestone as a contract using the necessary data
-      // Track the status of contract signing and milestone completion level
+      const deployedContract = deployMilestoneContract(milestone);
+  
+      // Implement the logic to track the status of contract signing and milestone completion level
+      // For example, you can update the contract status and completion level based on external systems or events
+  
+      // Create a new contract object with the deployed milestone details
+      const newContract = {
+        name: milestone.name,
+        contractAddress: deployedContract,
+        status: 'Pending',
+        completionLevel: 0,
+      };
+
+      // Add the new contract to the updatedContracts array
+      updatedContracts.push(newContract);
+  
+      // Log the deployed contract details
+      console.log('Deployed Contract:', newContract);
     });
+  
+    // Update the contracts state with the updatedContracts array
+    setContracts(updatedContracts);
   };
+  
 
   const [contracts, setContracts] = useState([]);
 
@@ -95,7 +166,7 @@ function App() {
       {activeItem === 'Milestones' && (
         <div class="milestonecon">
           <div className="wizard">
-          <h3>{selectedProject && selectedProject.name ? selectedProject.name : '??'}</h3>
+          <h3>{selectedProject && selectedProject.name ? selectedProject.name : '-Select a Project-'}</h3>
 
             <WizardComponent
               currentStep={currentStep}

@@ -9,21 +9,25 @@ const ContractList = ({ contracts }) => {
       <table>
         <thead>
           <tr>
+            <th>Milestone</th>
             <th>Contract Address</th>
+            <th>Blockchain</th>
             <th>Status</th>
             <th>Milestone Completion</th>
           </tr>
         </thead>
         <tbody>
           {contracts.map((contract) => (
-            <tr key={contract.address}>
-              <td>{contract.address}</td>
+            <tr key={contract.contractAddress}>
+              <td>{contract.name}</td>
+              <td>{contract.contractAddress}</td>
+              <td>{contract.blockchain}</td> {/* Add this line */}
               <td>{contract.status}</td>
               <td>
                 <div className="completion-bar">
                   <div
                     className="completion-level"
-                    style={{ width: `${contract.completion}%` }}
+                    style={{ width: `${contract.completionLevel}%` }}
                   ></div>
                 </div>
               </td>

@@ -45,7 +45,7 @@ const LeftNavBar = ({ handleNavItemClick }) => {
         </ul>
       </div>
       <button className="toggle-button" onClick={toggleNavVisibility}>
-        {isNavVisible ? 'Hide Nav' : 'Show Nav'}
+        {isNavVisible ? '<' : '>'}
       </button>
     </div>
   );

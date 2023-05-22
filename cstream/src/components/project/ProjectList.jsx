@@ -90,7 +90,7 @@ const ProjectList = ({selectedProject, setSelectedProject, setActiveItem}) => {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
-        <button onClick={handleAddProject}>Add Project</button>
+        <button onClick={handleAddProject}>Add Project</button><hr></hr>
       </div>
 
       <div className="project-list">

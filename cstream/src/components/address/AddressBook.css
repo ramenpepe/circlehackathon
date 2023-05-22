@@ -35,15 +35,21 @@
 }
 
 .contact {
+  cursor: pointer;
   margin: 5px;
   padding: 10px;
   display:inline-block;
   max-width:350px; 
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transform: perspective(500px) rotateY(20deg);
   border-radius: 4px;
+  transition: transform 0.5s;
 }
-
+.contact:hover{
+  
+  transform: perspective(500px) rotateY(0deg);
+}
 .contact-name {
   font-weight: bold;
 }
