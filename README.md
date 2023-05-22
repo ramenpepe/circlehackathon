@@ -7,6 +7,13 @@ circle hackthon 2023
 Deliverables:
 FE/ 
 Milestone controller; a wizard to setup conditions and funding tranche, to send payment request to paymaster, (cstream)
+
+- allows users to setup milestones based on certain criteria, typically facilitated by available online data. these can typically track for man hours, consummables, sales, signed documents, ticket completion and many more. 
+- by defining the query, endpoint and expected results.
+- define amount of requested funds per milestone, determine who you are seeking funds from, deploy milestones as smart contracts for fund custody,
+- paymaster interacts with contract and locks up fund for the agreed milestones. 
+- fund is released when detected defined milestone validation.
+
 Milestone monitor widget; widget that reads the conditions of milestone. (cannot be delivered due to time constraint)
 
 BE/ (cannot be delivered due to time constraint)
