@@ -18,13 +18,13 @@ const Diagram = ({ steps, direction, add, remove, select }) => {
         switch (step.type) {
           case 'box':
             return (
-              <div>
+              <div   key={index}>
               <div className="arrow-container down">
                 <div className="arrow"></div>
                 <div className="arrow delay"></div>
                 </div>
                 <div
-                  key={index}
+                
                   id={step.id}
                   className="box"
                   onClick={() => handleBoxClick(step.content)}
