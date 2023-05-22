@@ -17,7 +17,7 @@ const Diagram = ({ steps, direction, add, remove, select }) => {
       {steps.map((step, index) => {
         switch (step.type) {
           case 'box':
-            return (
+            return ( 
               <div   key={index}>
               <div className="arrow-container down">
                 <div className="arrow"></div>

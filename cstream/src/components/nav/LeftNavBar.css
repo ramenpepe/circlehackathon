@@ -27,7 +27,7 @@
   cursor: pointer;
   border: 1px solid; border-right:none;
   padding: 15px 10px;
-  border-radius:4px 0px 0px 4px;
+  border-radius:7px 0px 0px 7px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
@@ -39,7 +39,7 @@
   color: #fff;
 }
 .nav-item.active{ margin-right:-21px; margin-left:21px;
-background:#F5F5F5;  box-shadow: none; border-radius:4px 0px 0px 4px; border: 1px solid; border-right:none;
+background:#F5F5F5;  box-shadow: none; border: 1px solid; border-right:none;
 }
 .nav-item.active:hover{
   background:#f9f9f9; color:#000; margin-right:-21px; box-shadow: none;     
