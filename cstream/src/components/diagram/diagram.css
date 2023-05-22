@@ -137,7 +137,7 @@ transition: transform 0.5s;
 /* Add interaction */
 .vertical .box:hover {
 transform: perspective(500px) rotateX(0deg);
-background: var(--primary-color);
+background: var(--primary-color); 
  box-shadow:0 0px 0px 0px #FFF;  
 }
 
