@@ -91,6 +91,20 @@ function App() {
   
     return contractAddress;
   };
+
+  const getChainfromName = (name) => {
+   
+ const contact = contacts.find((c) => c.name === name );
+
+  if (contact) {
+    // Contact found, return the contact information
+    return contact.chain;
+  } else {
+    // Contact not found, return null or handle the case as needed
+    return null;
+  }
+
+  };
   
   const retrieveMilestoneData = (milestone) => {
     // Implement the logic to retrieve the milestone data based on the milestone object
@@ -110,32 +124,33 @@ function App() {
   
 
   const handleContractDeployment = () => {
-    console.log(contracts);
     const updatedContracts = [...contracts]; // Create a copy of the contracts array
   
     milestones.forEach((milestone) => {
       // Check if the milestone has already been deployed
-      const existingContractIndex = updatedContracts.findIndex((contract) => contract.name === milestone.name);
+      const existingContract = updatedContracts.find((contract) => contract.name === milestone.content.milestoneName);
   
-      if (existingContractIndex !== -1) {
+      if (existingContract) {
+        console.log("exists",milestone.content.milestoneName); 
         console.log(`Milestone '${milestone.name}' has already been deployed. Skipping deployment.`);
         return;
       }
   
       // Deploy the milestone as a contract using the necessary data
       const deployedContract = deployMilestoneContract(milestone);
-  
+      const chain = getChainfromName(milestone.content.counterparty)
       // Implement the logic to track the status of contract signing and milestone completion level
       // For example, you can update the contract status and completion level based on external systems or events
   
       // Create a new contract object with the deployed milestone details
       const newContract = {
-        name: milestone.name,
+        name: milestone.content.milestoneName,
         contractAddress: deployedContract,
+        blockchain: chain,
         status: 'Pending',
         completionLevel: 0,
       };
-
+  
       // Add the new contract to the updatedContracts array
       updatedContracts.push(newContract);
   
@@ -146,6 +161,7 @@ function App() {
     // Update the contracts state with the updatedContracts array
     setContracts(updatedContracts);
   };
+  
   
 
   const [contracts, setContracts] = useState([]);
@@ -166,7 +182,7 @@ function App() {
       {activeItem === 'Milestones' && (
         <div class="milestonecon">
           <div className="wizard">
-          <h3>{selectedProject && selectedProject.name ? selectedProject.name : '-Select a Project-'}</h3>
+          <h3>{selectedProject && selectedProject.name ? selectedProject.name : <div class="Block">-Select a Project-</div>}</h3>
 
             <WizardComponent
               currentStep={currentStep}

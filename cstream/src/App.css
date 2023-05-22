@@ -19,7 +19,7 @@ body {
   max-width: 800px;
   margin: 10vh auto;
 }
-
+.Block{ position:absolute; top:0; left:0; background:rgba(0,0,0,0.2); width:100%; height:100%; z-index:5; }
 .milestonecon .milestones {
   display: inline-block;
   width: 200px;

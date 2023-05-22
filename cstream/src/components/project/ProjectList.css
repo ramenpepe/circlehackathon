@@ -25,6 +25,7 @@ button{ margin:3px; }
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ccc;
+  box-shadow: 0 2px 3px #666;
   cursor: pointer;
   transform: perspective(500px) rotateX(20deg);
   border-radius: 4px;
@@ -32,6 +33,7 @@ button{ margin:3px; }
 }
 .project:hover {
 transform: perspective(500px) rotateX(0deg); background:#FFF;
+box-shadow: 0 0px 3px #666;
   border-radius: 4px;
   transition: transform 0.5s;
 }
