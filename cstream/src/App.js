@@ -9,7 +9,26 @@ import WizardComponent from './components/wizard/WizardComponent';
 
 function App() {
   const [activeItem, setActiveItem] = useState('Projects');
-  const [milestones, setMilestones] = useState([]);
+  const [milestones, setMilestones] = useState([
+
+      {type:"box",content:{
+        milestoneName: 'Completion of Foundation',
+        eventData: '{ "project-name": "ABC Construction", "phase": "Foundation" }',
+        verificationEndpoint: 'https://api.example.com/verify/foundation',
+        verificationResponse: 'status === "completed"',
+        releaseAmount: 5000,
+        counterparty: 'Jane Smith',
+      }},
+      {type:"box",content:{
+        milestoneName: 'Submission of Design Documents',
+        eventData: '{ "project-name": "XYZ Architects", "document-type": "Design" }',
+        verificationEndpoint: 'https://api.example.com/verify/documents',
+        verificationResponse: 'status === "approved"',
+        releaseAmount: 3000,
+        counterparty: 'John Doe',
+      }}
+     
+  ]);
   const [deletebtnshow, setDeleteBtnShow] = useState(0);
 
   const handleNavItemClick = (item) => {
