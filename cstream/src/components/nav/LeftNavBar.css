@@ -1,6 +1,6 @@
 .left-nav-bar {
-  width: 300px; height:100vh;
-  background:linear-gradient(#CCC, #666);
+  width: 200px; height:100vh;
+  background:linear-gradient(#000000, #0056b3);
   padding: 20px;
   box-sizing: border-box;
   border-right: 1px solid var(--secondary-color);
@@ -36,7 +36,7 @@
 
 .nav-item:hover {
   background-color: var(--secondary-color);
-  color: #fff;
+  color: #fff; box-shadow: 0 0 5px 1px inset #000;
 }
 .nav-item.active{ margin-right:-21px; margin-left:21px;
 background:#F5F5F5;  box-shadow: none; border: 1px solid; border-right:none;

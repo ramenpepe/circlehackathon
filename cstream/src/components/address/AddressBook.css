@@ -40,7 +40,7 @@
   margin: 5px;
   padding: 10px;
   display:inline-block;
-  max-width:350px; 
+  width:200px; 
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   transform: perspective(500px) rotateY(20deg);
