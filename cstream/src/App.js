@@ -232,8 +232,8 @@ function App() {
 
       {activeItem === 'Milestones' && (
         <div class="milestonecon">
-            <button className="button" style={{ background: "black" ,width: "100%",padding:"12px"}} onClick={handleContractDeployment}>
-  Deploy Milestone Contracts
+            <button className="button" style={{ background: "black" ,width: "100%"}} onClick={handleContractDeployment}>
+  <h4>Deploy Milestone Contracts</h4>
 </button>
           <div className="wizard">
           <h3>{selectedProject && selectedProject.name ? selectedProject.name : <div class="Block">-Select a Project-</div>}</h3>
@@ -278,7 +278,7 @@ function App() {
         </div>
       )}
       {activeItem === 'Projects' && <div>
-        <ProjectList selectedProject={selectedProject} setSelectedProject={setSelectedProject} setActiveItem={setActiveItem} />
+        <ProjectList selectedProject={selectedProject} setSelectedProject={setSelectedProject} activeItem={activeItem} setActiveItem={setActiveItem} />
         </div>}
       {activeItem === 'Contract Status' && <div><ContractList contracts={contracts} /></div>}
       {activeItem === 'Address Book' && <div>

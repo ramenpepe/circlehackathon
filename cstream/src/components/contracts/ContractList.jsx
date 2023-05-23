@@ -4,7 +4,7 @@ import './ContractList.css';
 const ContractList = ({ contracts }) => {
   return (
     <div className="contract-list-container">
-      <h2>Contract List</h2>
+   
 
       <table>
         <thead>

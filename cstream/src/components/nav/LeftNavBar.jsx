@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './LeftNavBar.css';
 
-const LeftNavBar = ({ handleNavItemClick }) => {
-  const [activeItem, setActiveItem] = useState('Projects');
+const LeftNavBar = ({ handleNavItemClick , activeItem , setActiveItem }) => {
+  
   const [isNavVisible, setIsNavVisible] = useState(true);
 
   const toggleNavVisibility = () => {
@@ -10,7 +10,7 @@ const LeftNavBar = ({ handleNavItemClick }) => {
   };
 
   const handleItemClick = (item) => {
-    setActiveItem(item);
+    //setActiveItem(item);
     handleNavItemClick(item);
   };
 

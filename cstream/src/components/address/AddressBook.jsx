@@ -51,9 +51,9 @@ const AddressBook = ({contacts, setContacts}) => {
 
   return (
     <div className="address-book-container">
-      <h2>Address Book</h2>
 
       <div className="contact-form">
+        <h4>Add Wallet Addresses</h4>
         <input
           type="text"
           placeholder="Name"
