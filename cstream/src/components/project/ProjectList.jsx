@@ -64,7 +64,7 @@ const ProjectList = ({selectedProject, setSelectedProject, setActiveItem}) => {
 
   return (
     <div className="project-list-container">
-      <h2>Projects</h2>
+    
 
       <div className="project-form">
         <input

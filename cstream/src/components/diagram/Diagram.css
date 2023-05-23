@@ -82,7 +82,7 @@ animation: slideAndPulseLeft 1.5s infinite linear;
 .arrow-container.right .arrow{
  border-top: 20px solid transparent;
 border-bottom: 20px solid transparent;
-border-left: 20px solid rgba(0,0,0,0.5);
+border-left: 20px solid rgba(255,255,255,0.5);
 animation: slideAndPulseRight 1.5s infinite linear;
 }
 

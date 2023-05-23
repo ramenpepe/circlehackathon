@@ -233,7 +233,10 @@ function App() {
       {activeItem === 'Milestones' && (
         <div class="milestonecon">
             <button className="button" style={{ background: "black" ,width: "100%"}} onClick={handleContractDeployment}>
-  <h4>Deploy Milestone Contracts</h4>
+  <h4>
+  <div class="arrow-container right"><div class="arrow"></div><div class="arrow delay"></div></div>
+    Deploy Milestone Contracts</h4>
+    
 </button>
           <div className="wizard">
           <h3>{selectedProject && selectedProject.name ? selectedProject.name : <div class="Block">-Select a Project-</div>}</h3>
