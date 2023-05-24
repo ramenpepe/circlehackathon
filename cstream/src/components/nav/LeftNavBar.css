@@ -1,17 +1,30 @@
 .left-nav-bar {
-  width: 200px; height:100vh;
-  background:linear-gradient(#000000, #0056b3);
+  width: 90px; height:100vh;
+  background: linear-gradient(to bottom, #0056b3 30%, #000 70%);
+  background-size: 400% 400%;
   padding: 20px;
   box-sizing: border-box;
-  border-right: 1px solid var(--secondary-color);
+  
   position: fixed;
   top: 0;
   left: 0;
   z-index:10;
   transition: transform 0.3s ease;
-  transform: translateY(0%);
+  z-index:36;
+  animation: gradientAnimation 5s linear infinite;
+  overflow:hidden;
 }
-
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+}
+50% {
+    background-position: 400% 40%;
+}
+100% {
+    background-position: 0% 50%;
+}
+}
 .left-nav-bar.hidden {
   transform: translateX(-100%);
 }
@@ -23,7 +36,7 @@
 }
 
 .nav-item {
-  margin-bottom: 10px;
+  margin-bottom: 1px;
   cursor: pointer;
   border: 1px solid; border-right:none;
   padding: 15px 10px;
@@ -31,19 +44,45 @@
   background-color: #d1d1d1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
-  margin-right:-20px; margin-left:20px;
+  margin-right:-20px; margin-left:0px;
 }
 
 .nav-item:hover {
   background-color: var(--secondary-color);
   color: #fff; box-shadow: 0 0 5px 1px inset #000;
 }
-.nav-item.active{ margin-right:-21px; margin-left:21px;
+.nav-item.active{ margin-right:-21px; margin-left:0px;
 background:#F5F5F5;  box-shadow: none; border: 1px solid; border-right:none;
 }
 .nav-item.active:hover{
   background:#f9f9f9; color:#000; margin-right:-21px; box-shadow: none;     
   
+  }
+  .placeholder-text {
+   
+    transform-origin: bottom left;
+    position: absolute;
+    border:none;
+    bottom: 60px;
+    left: 100px; /* Adjust the left value as needed */
+    z-index:40;
+    width: 200px; /* Adjust the width as needed */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: #FFF;
+    transform: translateX(100px)  rotate(-90deg);
+    transition: transform 0.3s ease;
+  }
+  
+  .placeholder-text.visible {
+    transform: translateX(0px) rotate(-90deg);
+  
+  }
+  
+  .placeholder-text.hidden {
+    display: none;
   }
 .toggle-button {
   position: fixed;
