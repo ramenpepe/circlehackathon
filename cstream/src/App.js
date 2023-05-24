@@ -235,11 +235,12 @@ function App() {
             <button className="button" style={{ background: "black" ,width: "100%"}} onClick={handleContractDeployment}>
   <h4>
   <div class="arrow-container right"><div class="arrow"></div><div class="arrow delay"></div></div>
-    Deploy Milestone Contracts</h4>
-    
+    Deploy Milestone Contracts <h3>{selectedProject && selectedProject.name ? selectedProject.name : ""}</h3> </h4>
+   
 </button>
+{selectedProject && selectedProject.name ? "": <div class="Block">-Select a Project-</div>}
           <div className="wizard">
-          <h3>{selectedProject && selectedProject.name ? selectedProject.name : <div class="Block">-Select a Project-</div>}</h3>
+          
 
             <WizardComponent
               currentStep={currentStep}

@@ -2,16 +2,6 @@
   margin-bottom: 20px;
 }
 
-.project-form input,
-.project-form textarea {
-  display: block;
-  margin-bottom: 10px;
-  width: 100%;
-  
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px;
-}
 
 button{ margin:3px; }
 .project-list {

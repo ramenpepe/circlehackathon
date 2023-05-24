@@ -17,7 +17,7 @@
   margin: 5px;
   padding: 45px 20px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 2px;
   width: 150px;
   z-index:5;
   cursor:pointer;
@@ -133,7 +133,7 @@ animation-delay: 0.75s;
 .vertical .box {
 transform: perspective(500px) rotateX(50deg);
 transition: transform 0.5s;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
 .horizontal .box {
